@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Miladimos\Package\Tests;
+namespace Laravelir\Dicom\Tests;
 
 
-use Miladimos\Package\Providers\PackageServiceProvider;
+use Laravelir\Dicom\Providers\DicomServiceProvider;
 
 class TestCase extends \Orchestra\Testbench\TestCase
 {

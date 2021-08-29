@@ -1,12 +1,12 @@
 {
-    "name": "miladimos/package-skeleton",
+    "name": "laravelir/laravel-dicom",
     "description": "test description",
-    "homepage": "https://github.com/miladimos/package-skeleton",
+    "homepage": "https://github.com/laravelir/laravel-dicom",
     "type": "library",
     "keywords": [
         "laravel",
         "laravel-package",
-        "laravel support",
+        "laravel dicom",
         "lumen packages",
         "laravel packages",
         "lumen support"
@@ -21,26 +21,26 @@
     ],
     "autoload": {
         "psr-4": {
-            "Miladimos\\Package\\": "src/"
+            "Laravelir\\Dicom\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Miladimos\\Package\\Tests\\": "tests"
+            "Laravelir\\Dicom\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "PackageServiceProvider"
+                "DicomServiceProvider"
             ],
             "aliases": {
-                "Package": "Miladimos\\Package\\Facades\\PackageFacade"
+                "Dicom": "Laravelir\\Dicom\\Facades\\DicomFacade"
             }
         }
     },
     "require": {
-        "php": ">=7.2"
+        "php": ">=7.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.4"

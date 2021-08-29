@@ -1,17 +1,17 @@
 <?php
 
-namespace Miladimos\Package\Providers;
+namespace Laravelir\Dicom\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Miladimos\Package\Console\Commands\InstallPackageCommand;
-use Miladimos\Package\Facades\PackageFacade;
+use Laravelir\Dicom\Facades\DicomFacade;
+use Laravelir\Dicom\Console\Commands\InstallPackageCommand;
 
-class PackageServiceProvider extends ServiceProvider
+class DicomServiceProvider extends ServiceProvider
 {
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . "/../../config/config.php", 'package');
+        $this->mergeConfigFrom(__DIR__ . "/../../config/dicom.php", 'dicom');
 
         $this->registerFacades();
     }
@@ -33,16 +33,16 @@ class PackageServiceProvider extends ServiceProvider
 
     private function registerFacades()
     {
-        $this->app->bind('package', function ($app) {
-            return new PackageFacade();
+        $this->app->bind('dicom', function ($app) {
+            return new DicomFacade();
         });
     }
 
     private function registerPublishes()
     {
         $this->publishes([
-            __DIR__ . '/../../config/config.php' => config_path('package.php')
-        ], 'package-config');
+            __DIR__ . '/../../config/dicom.php' => config_path('dicom.php')
+        ], 'dicom-config');
     }
 
     private function registerCommands()
@@ -55,7 +55,7 @@ class PackageServiceProvider extends ServiceProvider
     public function publishConfig()
     {
         $this->publishes([
-            __DIR__ . '/../../config/package.php' => config_path('package.php')
-        ], 'package-config');
+            __DIR__ . '/../../config/dicom.php' => config_path('dicom.php')
+        ], 'dicom-config');
     }
 }
