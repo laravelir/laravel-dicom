@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DicomServiceProvider"
+                "Laravelir\\Dicom\\Providers\\DicomServiceProvider"
             ],
             "aliases": {
                 "Dicom": "Laravelir\\Dicom\\Facades\\DicomFacade"
